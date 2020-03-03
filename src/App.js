@@ -5,6 +5,9 @@ import seedColors from './seedColor'
 class  App extends React.Component {
  constructor(props){
    super(props);
+   this.state={
+
+   }
  }
   render(){
 
@@ -12,7 +15,7 @@ class  App extends React.Component {
   return (
     <div className="App">
       Hello from React
-      <Palette palette={seedColors[5]}></Palette>
+      <Palette {...seedColors[4]}></Palette>
        </div>
   );
   }
