@@ -1,0 +1,15 @@
+.palette-footer{
+background-color: white;
+    display: flex;
+    height: 5vh;
+    justify-content: flex-end;
+    font-weight: bold;
+    
+    align-items: center;
+
+}
+
+.emoji{
+font-size: 1.5rem;
+margin: 0 1rem;
+}

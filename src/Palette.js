@@ -1,10 +1,13 @@
 
-import React, { Component } from 'react';
+import React from 'react';
 import ColorBox from './ColorBox';
 import Navbar from './Navbar';
 import './Palette.css';
+import './PaletteFooter'
+import PaletteFooter from './PaletteFooter';
 
-class Palette extends Component {
+
+class Palette extends React.Component {
     constructor(props) {
         super(props);
         this.state = { 
@@ -25,7 +28,9 @@ class Palette extends Component {
         )
     }
     render() { 
-        const colorBoxes=this.props.palette.colors[this.state.level].map(background=> <ColorBox background={background[this.state.format]} name={background.name}/>)
+        const paletteName= this.props.palette.paletteName;
+        const colorBoxes=this.props.palette.colors[this.state.level].map(background=> <ColorBox background={background[this.state.format]} key={background.id} name={background.name}/>)
+        const emoji= this.props.palette.emoji;
         return ( <div className="Palette">
             {/** Nav bar goes here*/}
             <Navbar level={this.state.level} changeLevel={this.changeLevel} handleChange={this.changeFormat}/>
@@ -34,9 +39,8 @@ class Palette extends Component {
                   colorBoxes
                 }
             </div>
-            {
-                /* footer  */
-            }
+            <PaletteFooter paletteName={paletteName} emoji={emoji}/>
+            
         </div> );
     }
 }
