@@ -15,8 +15,8 @@ console.log(generatePalette(seedColors[4]));
   
   return (
     <div className="App">
-      Hello from React
-      <Palette {...seedColors[4]}></Palette>
+      
+      <Palette palette={generatePalette(seedColors[1])}></Palette>
        </div>
   );
   }
