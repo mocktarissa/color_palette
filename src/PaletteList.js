@@ -25,7 +25,8 @@ const styles={
     nav:{
         display:"flex",
         width:"100%",
-        justifyContent:"space-between"
+        justifyContent:"space-between",
+        color:"white",
 
     },
     palette:{
