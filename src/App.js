@@ -20,7 +20,7 @@ class  App extends React.Component {
 console.log(generatePalette(seedColors[4]));
   
   return (<Switch>
-<Route exact path="/" render={()=> <PaletteList/> } />
+<Route exact path="/" render={(routeProps)=> <PaletteList {...routeProps}/> } />
   
   
     <Route exact path="/palette/:id" render={(routeProps)=> <Palette palette={generatePalette(this.findPalette(routeProps.match.params.id))}/> }/>

@@ -7,7 +7,7 @@ import MiniPalette from './MiniPalette'
 import {withStyles} from '@material-ui/styles'
 const styles={
     root:{
-        height: "100%",
+        height: "100vh",
         backgroundColor:"blue",
         
         display:"flex",
@@ -42,9 +42,11 @@ class PaletteList extends Component {
         super(props);
         this.state = {  }
     }
-    
+    gotoRoute(id){
+        this.props.history.push(`/palette/${id}`)
+    }
     render() { 
-        const lis= seedColors.map( c=> <MiniPalette {...c}>
+        const lis= seedColors.map( c=> <MiniPalette {...c} handleClick={()=>this.gotoRoute(c.id)}>
             
         </MiniPalette>)
         
@@ -54,7 +56,7 @@ class PaletteList extends Component {
                 <nav className={this.props.classes.nav}>
                     <h1>Palette List</h1>
                 </nav>
-                <div className={this.props.classes.palette}>
+                <div className={this.props.classes.palette} >
                 {lis}
                 </div>
             </div>

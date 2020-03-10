@@ -18,10 +18,10 @@ const styles={
         boxSizing:"border-box",
         width:"100%",
         display:"grid",
-        gridTemplateColumns:"repeat(4,25%)",
-        
-
-        
+        gridTemplateColumns:"repeat(5,20%)",
+        borderRadius:"5px",
+        overflow:"hidden",
+        backgroundColor:"red"
     },
     title:{
         display:"flex",
@@ -38,8 +38,10 @@ const styles={
        fontSize:"1.5rem" 
     },
     miniColor:{
-        height:"2rem",
+        height:"2.5rem",
         width:"100%",
+        margin:"0 auto",
+        display:"inline-block"
     },
     link:{
         cursor:"pointer",
@@ -52,18 +54,18 @@ const styles={
          color=>(
              <div className={classes.miniColor} style={{
                  backgroundColor: color.color
-             }}>
+             }} key={color.name}>
 
              </div>
          )
      )
     return(
-        <div className={classes.root}>
+        <div className={classes.root} onClick={props.handleClick}>
            
-            <Link to={`/palette/${id}`} className={classes.link}> <div className={classes.colors}>
+             <div className={classes.colors}>
             {miniColorBoxes}
             </div>
-            <h5 className={classes.title}>{paletteName} <span className={classes.emoji}>{emoji}</span></h5></Link>
+            <h5 className={classes.title}>{paletteName} <span className={classes.emoji}>{emoji}</span></h5>
         </div>
     )
 }
