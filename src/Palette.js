@@ -32,11 +32,11 @@ class Palette extends React.Component {
         console.log(this.props.palette.id);
         const id=this.props.palette.id;
         const paletteName= this.props.palette.paletteName;
-        const colorBoxes=this.props.palette.colors[this.state.level].map(background=> <ColorBox background={background[this.state.format]} key={background.id} name={background.name} id={background.id} paletteId={id}/>)
+        const colorBoxes=this.props.palette.colors[this.state.level].map(background=> <ColorBox showMore={true} background={background[this.state.format]} key={background.id} name={background.name} id={background.id} paletteId={id}/>)
         const emoji= this.props.palette.emoji;
         return ( <div className="Palette">
             {/** Nav bar goes here*/}
-            <Navbar level={this.state.level} changeLevel={this.changeLevel} handleChange={this.changeFormat}/>
+            <Navbar displaySlider level={this.state.level} changeLevel={this.changeLevel} handleChange={this.changeFormat}/>
             <div className="Palette-colors">
                 {
                   colorBoxes

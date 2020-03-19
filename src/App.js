@@ -25,7 +25,7 @@ console.log(generatePalette(seedColors[4]));
   
   
     <Route exact path="/palette/:id" render={(routeProps)=> <Palette palette={generatePalette(this.findPalette(routeProps.match.params.id))}/> }/>
-    <Route exact path="/palette/:paletteId/:colorId" render={(routeProps)=> <SingleColorPalette/> }/>
+    <Route exact path="/palette/:paletteId/:colorId" render={(routeProps)=> <SingleColorPalette id={routeProps.match.params.colorId}palette={generatePalette(this.findPalette(routeProps.match.params.paletteId))}/> }/>
   </Switch>
   
   

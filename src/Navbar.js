@@ -41,12 +41,16 @@ class Navbar extends Component {
                 </Link>
                 
             </div>
-            <div className="slider">
+            {
+                this.props.displaySlider &&
+                <div className="slider">
             <Slider defaultValue={this.props.level}
              min={100} max={900}
               onAfterChange={this.props.changeLevel} step={100}/>
             
             </div>
+            }
+            
             <div className="select-container">
             <Select value={this.state.format} onChange={this.handleChange}>
             <MenuItem value="hex">HEX - #FFF </MenuItem>
