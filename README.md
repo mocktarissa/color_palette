@@ -1,4 +1,6 @@
-#Live at https://react-color-picker-ui.netlify.app/
+#Live at https://react-color-picker-ui.netlify.app/ 
+
+
 Libraries frameworks i used for this project
 ### React
 
